@@ -1,265 +1,35 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>教你发行BSC链上可分其他代币|含营销钱包|通缩|回流 智能合约 | 此刻的永恒</title><meta name="author" content="Sdzczh"><meta name="copyright" content="Sdzczh"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="支持分红SHIB ETH USDT DOGE等BSC所有代币。 Remixhttps:&#x2F;&#x2F;remix.ethereum.org&#x2F; 编译&#x2F;开源参数COMPILER: v0.8.4+commit.e28d00a7.js Enable optimization: 开启并使用默认值200 Other Settings: default evmVersion, MIT license 合约核心源码 cons">
-<meta property="og:type" content="article">
-<meta property="og:title" content="教你发行BSC链上可分其他代币|含营销钱包|通缩|回流 智能合约">
-<meta property="og:url" content="http://example.com/post/%E6%95%99%E4%BD%A0%E5%8F%91%E8%A1%8CBSC%E9%93%BE%E4%B8%8A%E5%8F%AF%E5%88%86%E5%85%B6%E4%BB%96%E4%BB%A3%E5%B8%81-%E5%90%AB%E8%90%A5%E9%94%80%E9%92%B1%E5%8C%85-%E9%80%9A%E7%BC%A9-%E5%9B%9E%E6%B5%81-%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/index.html">
-<meta property="og:site_name" content="此刻的永恒">
-<meta property="og:description" content="支持分红SHIB ETH USDT DOGE等BSC所有代币。 Remixhttps:&#x2F;&#x2F;remix.ethereum.org&#x2F; 编译&#x2F;开源参数COMPILER: v0.8.4+commit.e28d00a7.js Enable optimization: 开启并使用默认值200 Other Settings: default evmVersion, MIT license 合约核心源码 cons">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/lm.png">
-<meta property="article:published_time" content="2022-03-17T18:50:05.000Z">
-<meta property="article:modified_time" content="2022-03-24T16:27:46.168Z">
-<meta property="article:author" content="Sdzczh">
-<meta property="article:tag" content="区块链">
-<meta property="article:tag" content="教程">
-<meta property="article:tag" content="BSC">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/img/lm.png"><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "教你发行BSC链上可分其他代币|含营销钱包|通缩|回流 智能合约",
-  "url": "http://example.com/post/%E6%95%99%E4%BD%A0%E5%8F%91%E8%A1%8CBSC%E9%93%BE%E4%B8%8A%E5%8F%AF%E5%88%86%E5%85%B6%E4%BB%96%E4%BB%A3%E5%B8%81-%E5%90%AB%E8%90%A5%E9%94%80%E9%92%B1%E5%8C%85-%E9%80%9A%E7%BC%A9-%E5%9B%9E%E6%B5%81-%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/index.html",
-  "image": "http://example.com/img/lm.png",
-  "datePublished": "2022-03-17T18:50:05.000Z",
-  "dateModified": "2022-03-24T16:27:46.168Z",
-  "author": [
-    {
-      "@type": "Person",
-      "name": "Sdzczh",
-      "url": "http://example.com/"
-    }
-  ]
-}</script><link rel="shortcut icon" href="/img/lm.ico"><link rel="canonical" href="http://example.com/post/%E6%95%99%E4%BD%A0%E5%8F%91%E8%A1%8CBSC%E9%93%BE%E4%B8%8A%E5%8F%AF%E5%88%86%E5%85%B6%E4%BB%96%E4%BB%A3%E5%B8%81-%E5%90%AB%E8%90%A5%E9%94%80%E9%92%B1%E5%8C%85-%E9%80%9A%E7%BC%A9-%E5%9B%9E%E6%B5%81-%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
-    (() => {
-      
-    const saveToLocal = {
-      set: (key, value, ttl) => {
-        if (!ttl) return
-        const expiry = Date.now() + ttl * 86400000
-        localStorage.setItem(key, JSON.stringify({ value, expiry }))
-      },
-      get: key => {
-        const itemStr = localStorage.getItem(key)
-        if (!itemStr) return undefined
-        const { value, expiry } = JSON.parse(itemStr)
-        if (Date.now() > expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return value
-      }
-    }
+extends includes/layout.pug
 
-    window.btf = {
-      saveToLocal,
-      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
-        script.onload = script.onreadystatechange = () => {
-          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
-        }
-        script.onerror = reject
-        document.head.appendChild(script)
-      }),
-      getCSS: (url, id) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onload = link.onreadystatechange = () => {
-          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
-        }
-        link.onerror = reject
-        document.head.appendChild(link)
-      }),
-      addGlobalFn: (key, fn, name = false, parent = window) => {
-        if (!false && key.startsWith('pjax')) return
-        const globalFn = parent.globalFn || {}
-        globalFn[key] = globalFn[key] || {}
-        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
-        parent.globalFn = globalFn
-      }
-    }
-  
-      
-      const activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      const activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
-        }
-      }
+block content
+  #post
+    if top_img === false
+      include includes/header/post-info.pug
 
-      btf.activateDarkMode = activateDarkMode
-      btf.activateLightMode = activateLightMode
+    article#article-container.container.post-content
+      if theme.noticeOutdate.enable && page.noticeOutdate !== false
+        include includes/post/outdate-notice.pug
+      else
+        !=page.content
+    include includes/post/post-copyright.pug
+    .tag_share
+      if (page.tags.length > 0 && theme.post_meta.post.tags)
+        .post-meta__tag-list
+          each item, index in page.tags.data
+            a(href=url_for(item.path)).post-meta__tags #[=item.name]
+      include includes/third-party/share/index.pug
 
-      const theme = saveToLocal.get('theme')
-    
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
-        
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
-      }
-    
-      
-    const detectApple = () => {
-      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-  
-    })()
-  </script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
-  copy: {
-    success: '复制成功',
-    error: '复制失败',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'null',
-  Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
-    buttonText: '加载更多'
-  },
-  isPhotoFigcaption: false,
-  islazyloadPlugin: false,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '教你发行BSC链上可分其他代币|含营销钱包|通缩|回流 智能合约',
-  isHighlightShrink: false,
-  isToc: true,
-  pageType: 'post'
-}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 5.4.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/lm.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 時間軸</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友鏈</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(https://tbhxq.oss-cn-qingdao.aliyuncs.com/bg/index.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">此刻的永恒</span></a><a class="nav-page-title" href="/"><span class="site-name">教你发行BSC链上可分其他代币|含营销钱包|通缩|回流 智能合约</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 時間軸</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友鏈</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">教你发行BSC链上可分其他代币|含营销钱包|通缩|回流 智能合约</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-17T18:50:05.000Z" title="发表于 2022-03-18 02:50:05">2022-03-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-24T16:27:46.168Z" title="更新于 2022-03-25 00:27:46">2022-03-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%8F%91%E5%B8%81%E6%95%99%E7%A8%8B/">发币教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><pre class="line-numbers language-none"><code class="language-none">支持分红SHIB ETH USDT DOGE等BSC所有代币。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="Remix"><a href="#Remix" class="headerlink" title="Remix"></a>Remix</h2><p><a target="_blank" rel="noopener" href="https://remix.ethereum.org/">https://remix.ethereum.org/</a></p>
-<h2 id="编译-开源参数"><a href="#编译-开源参数" class="headerlink" title="编译/开源参数"></a>编译/开源参数</h2><p>COMPILER: v0.8.4+commit.e28d00a7.js</p>
-<p>Enable optimization: 开启并使用默认值200</p>
-<p>Other Settings: default evmVersion, MIT license</p>
-<h2 id="合约核心源码"><a href="#合约核心源码" class="headerlink" title="合约核心源码"></a>合约核心源码</h2><pre class="line-numbers language-none"><code class="language-none">
-constructor(
-    string memory name_,
-    string memory symbol_,
-    uint256 totalSupply_,
-    address[2] memory addrs, &#x2F;&#x2F; reward, marketing wallet
-    uint256[3] memory feeSettings, &#x2F;&#x2F; rewards, liquidity, marketing
-    uint256 minimumTokenBalanceForDividends_
-) payable ERC20(name_, symbol_) &#123;
-    rewardToken &#x3D; addrs[0];
-    _marketingWalletAddress &#x3D; addrs[1];
-    require(
-        msg.sender !&#x3D; _marketingWalletAddress,
-        &quot;Owner and marketing wallet cannot be the same&quot;
-    );
-    totalSupply_ &#x3D; totalSupply_ * 10**18;
-    tokenRewardsFee &#x3D; feeSettings[0];
-    liquidityFee &#x3D; feeSettings[1];
-    marketingFee &#x3D; feeSettings[2];
-    totalFees &#x3D; tokenRewardsFee.add(liquidityFee).add(marketingFee);
-    require(totalFees &lt;&#x3D; 25, &quot;Total fee is over 25%&quot;);
-    swapTokensAtAmount &#x3D; totalSupply_.mul(2).div(10**6); &#x2F;&#x2F; 0.002%
+    if theme.reward.enable && theme.reward.QR_code
+      !=partial('includes/post/reward', {}, {cache: true})
 
-    &#x2F;&#x2F; use by default 300,000 gas to process auto-claiming dividends
-    gasForProcessing &#x3D; 300000;
+    //- ad
+    if theme.ad && theme.ad.post
+      .ads-wrap!=theme.ad.post
 
-    dividendTracker &#x3D; BABYTOKENDividendTracker(
-        payable(Clones.clone(0xD2EE2Be66DD5Dd596469CDbac00b5Ad2554F80ea))
-    );
-    dividendTracker.initialize(
-        rewardToken,
-        minimumTokenBalanceForDividends_
-    );
+    if theme.post_pagination
+      include includes/pagination.pug
+    if theme.related_post && theme.related_post.enable
+      != related_posts(page,site.posts)
 
-    IUniswapV2Router02 _uniswapV2Router &#x3D; IUniswapV2Router02(0x10ED43C718714eb63d5aA57B78B54704E256024E);
-    &#x2F;&#x2F; Create a uniswap pair for this new token
-    address _uniswapV2Pair &#x3D; IUniswapV2Factory(_uniswapV2Router.factory())
-        .createPair(address(this), _uniswapV2Router.WETH());
-    uniswapV2Router &#x3D; _uniswapV2Router;
-    uniswapV2Pair &#x3D; _uniswapV2Pair;
-    _setAutomatedMarketMakerPair(_uniswapV2Pair, true);
-
-    &#x2F;&#x2F; exclude from receiving dividends
-    dividendTracker.excludeFromDividends(address(dividendTracker));
-    dividendTracker.excludeFromDividends(address(this));
-    dividendTracker.excludeFromDividends(owner());
-    dividendTracker.excludeFromDividends(address(0xdead));
-    dividendTracker.excludeFromDividends(address(_uniswapV2Router));
-    &#x2F;&#x2F; exclude from paying fees or having max transaction amount
-    excludeFromFees(owner(), true);
-    excludeFromFees(_marketingWalletAddress, true);
-    excludeFromFees(address(this), true);
-    &#x2F;*
-        _mint is an internal function in ERC20.sol that is only called here,
-        and CANNOT be called ever again
-    *&#x2F;
-    _mint(owner(), totalSupply_);
-
-    emit TokenCreated(owner(), address(this), TokenType.baby, VERSION);
-
-    payable(serviceFeeReceiver_).transfer(serviceFee_);
-&#125;
-
-receive() external payable &#123;&#125;
-
-function updateDividendTracker(address newAddress) public onlyOwner &#123;
-    require(
-        newAddress !&#x3D; address(dividendTracker),
-        &quot;BABYTOKEN: The dividend tracker already has that address&quot;
-    );
-
-    BABYTOKENDividendTracker newDividendTracker &#x3D; BABYTOKENDividendTracker(
-        payable(newAddress)
-    );
-
-    require(
-        newDividendTracker.owner() &#x3D;&#x3D; address(this),
-        &quot;BABYTOKEN: The new dividend tracker must be owned by the BABYTOKEN token contract&quot;
-    );
-
-    newDividendTracker.excludeFromDividends(address(newDividendTracker));
-    newDividendTracker.excludeFromDividends(address(this));
-    newDividendTracker.excludeFromDividends(owner());
-    newDividendTracker.excludeFromDividends(address(uniswapV2Router));
-
-    emit UpdateDividendTracker(newAddress, address(dividendTracker));
-
-    dividendTracker &#x3D; newDividendTracker;
-&#125;
-
- 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="部署参数"><a href="#部署参数" class="headerlink" title="部署参数"></a>部署参数</h2><p>Value填写：<code>200000000000000000 </code><br>CONTRACT 选择 <code>Babytoken</code>，<br>name_: <code>BTC COIN (代币名称)</code><br>symbol_: <code>BTC (代币简称)</code><br>totalSupply_: <code>21000000</code> (发行量 发多少就写多少)<br>addds_: <code>[“0x2859e4544C4bB03966803b044A93563Bd2D0DD4D”,”0x2859e4544C4bB03966803b044A93563Bd2D0DD4D”]</code> (要分红的代币合约、营销钱包)<br>feeSettings_: <code>[4,3,1]</code> (分红、流动性、营销钱包)<br>minimumTokenBalanceForDividends_: <code>10000000000000000000000</code> (持有多少代币参与分红。数量后要加18个0)</p>
-<h2 id="BSC常用代币合约地址"><a href="#BSC常用代币合约地址" class="headerlink" title="BSC常用代币合约地址"></a>BSC常用代币合约地址</h2><p>SHIB: <code>0x2859e4544C4bB03966803b044A93563Bd2D0DD4D</code><br>USDT: <code>0x55d398326f99059fF775485246999027B3197955</code><br>ETH:  <code>0x2170Ed0880ac9A755fd29B2688956BD959F933F8</code><br>DOGE: <code>0xbA2aE424d960c26247Dd6c32edC70B295c744C43</code><br>BUSD: <code>0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56</code><br>CAKE: <code>0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82</code></p>
-<p><b>有任何问题请联系QQ：2510472590</b></p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Sdzczh</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/%E6%95%99%E4%BD%A0%E5%8F%91%E8%A1%8CBSC%E9%93%BE%E4%B8%8A%E5%8F%AF%E5%88%86%E5%85%B6%E4%BB%96%E4%BB%A3%E5%B8%81-%E5%90%AB%E8%90%A5%E9%94%80%E9%92%B1%E5%8C%85-%E9%80%9A%E7%BC%A9-%E5%9B%9E%E6%B5%81-%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/index.html">http://example.com/post/%E6%95%99%E4%BD%A0%E5%8F%91%E8%A1%8CBSC%E9%93%BE%E4%B8%8A%E5%8F%AF%E5%88%86%E5%85%B6%E4%BB%96%E4%BB%A3%E5%B8%81-%E5%90%AB%E8%90%A5%E9%94%80%E9%92%B1%E5%8C%85-%E9%80%9A%E7%BC%A9-%E5%9B%9E%E6%B5%81-%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/index.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">此刻的永恒</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/">区块链</a><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/tags/BSC/">BSC</a></div><div class="post-share"><div class="social-share" data-image="/img/lm.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/post/Linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/index.html" title="Linux常见命令"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">Linux常见命令</div></div><div class="info-2"><div class="info-item-1">1.常见操作命令cd home, cd home&#x2F;tomcat # 定位到某个目录 cd ..&#x2F; # 回到上一层目录 ls # 显示当前文件夹下的文件 tab键 # 自动完成 mkdir 文件夹名 # 新建文件夹 mv 旧名称 新名称 # 移动文件，也可以用来重命名 rm -rf 文件名 # 删除文件或者文件夹，其中，r表示递归删除子文件，f表示强制删除无需确认 某个命令 --help # linux下大部分命令查看帮助方法 cp -r 旧文件夹名 新文件夹名 # 复制文件夹或者文件，-r表示递归 chmod 777 startup.sh # 给某个文件添加执行权限 curl http:&#x2F;&#x2F;liuxianan.com # 访问某个网址，返回HTML代码 wget http:&#x2F;&#x2F;xxx.com&#x2F;123.zip # 下载文件 pkill node，pkill nginx # 强制杀死某个进程 其它： pwd # 查看当前目录 whoami # 查看当前登录用户 which 某个命令 #...</div></div></div></a><a class="pagination-related" href="/post/%E4%BB%A3%E5%B8%81%E7%9A%84%E9%98%B2%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%9C%BA%E5%88%B6/index.html" title="代币的防机器人机制"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">代币的防机器人机制</div></div><div class="info-2"><div class="info-item-1">solidity防机器人有两种方式一种是根据判断在几区块，另外一种是根据时间来检测 先用第一种判断时间来检测机器人，照例用以前的代码再新加判断机器人的逻辑 &#x2F;&#x2F; SPDX-License-Identifier: MIT pragma solidity ^0.6.2; import &quot;.&#x2F;ERC20.sol&quot;; contract Token is ERC20&#123;      string private _name;    &#x2F;&#x2F;币名字     string private _symbol;      &#x2F;&#x2F;币符号     address public deadwallet &#x3D; 0x0000000000000000000000000000000000000000;    &#x2F;&#x2F;销毁地址     address public LiquityWallet;            &#x2F;&#x2F;铸币钱包     mapping(address...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/post/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%9C%A8BSC%E4%B8%BB%E9%93%BE%E4%B8%8A%E5%8F%91%E5%B8%81-BSC%E5%8F%91%E5%B8%81/index.html" title="手把手教你在BSC主链上发币|BSC发币"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-16</div><div class="info-item-2">手把手教你在BSC主链上发币|BSC发币</div></div><div class="info-2"><div class="info-item-1">一、什么是币安智能链？         币安智能链（BSC）可以被描述为与币安链并行的区块链。与币安链不同的地方在于，BSC拥有智能合约功能并与以太坊虚拟机（EVM）兼容。这里的设计目标是保持完整币安链的高吞吐量，同时将智能合约引入其生态系统。 本质上两个区块链都是并行的。值得注意的是BSC并非所谓的第二层或链外扩展性解决方案。它是一个即使币安链下线后也可以运行的独立区块链。从设计的角度来看，这两个链非常相似。 由于BSC与EVM兼容，因此它支持以太坊工具和DApp。理论上讲这使开发人员可以轻松地从以太坊移植其项目。对于用户而言，这表示他们可以轻松配置诸如MetaMask之类的应用程序与BSC一起使用，只需调整几个设置即可。 二、相关信息官网：https://www.binance.org/cn 区块链浏览器：https://bscscan.com/ 开发文档：https://docs.binance.org/index.html 三、发智能合约教程1、安装metamask插件下载地址：https://metamask.io/ 2、添加自定义网络：chainid:...</div></div></div></a><a class="pagination-related" href="/post/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%9C%A8opensea%E5%87%BA%E5%94%AE%E8%87%AA%E5%B7%B1%E7%9A%84NFT/index.html" title="手把手教你在opensea出售自己的NFT"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-17</div><div class="info-item-2">手把手教你在opensea出售自己的NFT</div></div><div class="info-2"><div class="info-item-1">一、链接钱包本文所使用Rinkeby网络，打开官网链接钱包 二、发行ERC721智能合约1、使用remix部署过程参考erc20智能合约，详见这篇文章 2、在浏览器上进行合约开源开源的目的是为了更好的使用铸造方法链接钱包后我们使用铸造方法进行部署智能合约此处注意在uri栏中需要填入智能合约元数据，包含但不限于名称、logo、描述等信息，相见官网文档 3、铸造完成后即可在【我的收集】中看到这个项目了点击进入后即可看到我们设置的相关信息 结尾至此在opensea上发行我们自己的erc721智能合约教学即完成了 </div></div></div></a><a class="pagination-related" href="/post/%E6%95%99%E4%BD%A0%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E6%94%BE%E5%BC%83%E6%89%80%E6%9C%89%E6%9D%83/index.html" title="教你智能合约放弃所有权"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-17</div><div class="info-item-2">教你智能合约放弃所有权</div></div><div class="info-2"><div class="info-item-1">准备工作 ERC20标准代币会自己发行 准备好【权限控制】相关代码 有足够的币来支付gas费用  对发布智能合约有疑问请参考我的另一篇文章《从零教你发行自己的以太坊ERC20智能合约》 相关操作请在需要拥有【丢弃权限】功能的合约中添加以下代码，发币完成后执行renounceOwnership()函数即可完成丢弃权限操作，此时权限地址为0x0000000000000000000000000000000000000000          注：renounceOwnership()操作不可挽回！ contract Ownable is Context &#123;     address private _owner;      event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);      &#x2F;&#x2F;构造函数     constructor () internal &#123;         address msgSender &#x3D;...</div></div></div></a><a class="pagination-related" href="/post/%E5%B0%86UniswapV2%E9%83%A8%E7%BD%B2%E5%88%B0%E6%89%80%E6%9C%89%E5%8C%BA%E5%9D%97%E9%93%BE-%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E4%BA%A4%E6%98%93%E6%89%80Uniswap%E5%A4%9A%E9%93%BE%E9%83%A8%E7%BD%B2/index.html" title="将UniswapV2部署到所有区块链--去中心化交易所Uniswap多链部署"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-26</div><div class="info-item-2">将UniswapV2部署到所有区块链--去中心化交易所Uniswap多链部署</div></div><div class="info-2"><div class="info-item-1">准备工作工厂合约工厂合约链接 在主合约添加 bytes32 public constant INIT_CODE_PAIR_HASH &#x3D; keccak256(abi.encodePacked(type(UniswapV2Pair).creationCode)); 编译EVM版本选择istanbul，优化次数999999。构造参数为管理员地址。   路由合约路由合约链接 全局搜索hex，根据工厂合约查询到的INIT_CODE_PAIR_HASH的值，替换到路由合约中。构造参数为工厂合约地址和WETH地址。 WETH合约合约链接地址 Multicall合约合约链接地址 前端工作uniswap-sdk         建议使用2020.8.6版本的 git clone https:&#x2F;&#x2F;github.com&#x2F;Uniswap&#x2F;v2-sdk.git  修改工厂合约地址和Init Code  修改WETH地址  新增链ID  修改package.json打包上传npm   npm login npm...</div></div></div></a><a class="pagination-related" href="/post/%E5%B8%A6%E4%BD%A0%E8%B5%B0%E8%BF%9B%E7%A5%9E%E7%A7%98%E7%9A%84%E5%B7%A5%E5%8E%82%E5%90%88%E7%BA%A6-%E5%B7%A5%E5%8E%82%E5%90%88%E7%BA%A6%E8%A7%A3%E5%AF%86-%E4%BD%BF%E7%94%A8%E5%90%88%E7%BA%A6%E9%83%A8%E7%BD%B2%E5%90%88%E7%BA%A6/index.html" title="带你走进神秘的工厂合约|工厂合约解密|使用合约部署合约"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-05</div><div class="info-item-2">带你走进神秘的工厂合约|工厂合约解密|使用合约部署合约</div></div><div class="info-2"><div class="info-item-1">         工厂合约，顾名思义就是创建合约的工厂。 语法详解可以根据new关键字来创建合约new Contract() 示例&#x2F;&#x2F; SPDX-License-Identifier: MIT pragma solidity ^0.8.2;  contract DemoContract &#123;     string public name;     constructor(string memory _name) &#123;         name &#x3D; _name;     &#125; &#125;  contract Test&#123;     DemoContract[] public ads;     function create(string calldata _name) external&#123;         DemoContract dc &#x3D; new DemoContract(_name);         ads.push(dc);    ...</div></div></div></a><a class="pagination-related" href="/post/Java%E4%BD%BF%E7%94%A8Web3j%E8%BF%9B%E8%A1%8Ceth%E5%92%8Ctoken%E8%BD%AC%E8%B4%A6/index.html" title="Java使用Web3j进行eth和token转账"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-17</div><div class="info-item-2">Java使用Web3j进行eth和token转账</div></div><div class="info-2"><div class="info-item-1">ETH转账public static void transfer() throws Exception &#123;     Web3j web3j = Web3j.build(new HttpService("infura节点链接"));     BigInteger bigInteger = new BigInteger("钱包私钥", 16);     ECKeyPair ecKeyPair = ECKeyPair.create(bigInteger);     Credentials credentials = Credentials.create(ecKeyPair);     TransactionReceipt transactionReceipt = Transfer.sendFunds(web3j, credentials, "目标地址", BigDecimal.valueOf(0.001), Convert.Unit.ETHER).send();    ...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/lm.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Sdzczh</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">UVEgMjUxMDQ3MjU5MA==</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Remix"><span class="toc-number">1.</span> <span class="toc-text">Remix</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91-%E5%BC%80%E6%BA%90%E5%8F%82%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">编译&#x2F;开源参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%88%E7%BA%A6%E6%A0%B8%E5%BF%83%E6%BA%90%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">合约核心源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%8F%82%E6%95%B0"><span class="toc-number">4.</span> <span class="toc-text">部署参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BSC%E5%B8%B8%E7%94%A8%E4%BB%A3%E5%B8%81%E5%90%88%E7%BA%A6%E5%9C%B0%E5%9D%80"><span class="toc-number">5.</span> <span class="toc-text">BSC常用代币合约地址</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88/index.html" title="以太坊开发资源整合">以太坊开发资源整合</a><time datetime="2022-04-09T13:32:49.000Z" title="发表于 2022-04-09 21:32:49">2022-04-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/%E5%B8%A6%E4%BD%A0%E8%B5%B0%E8%BF%9B%E7%A5%9E%E7%A7%98%E7%9A%84%E5%B7%A5%E5%8E%82%E5%90%88%E7%BA%A6-%E5%B7%A5%E5%8E%82%E5%90%88%E7%BA%A6%E8%A7%A3%E5%AF%86-%E4%BD%BF%E7%94%A8%E5%90%88%E7%BA%A6%E9%83%A8%E7%BD%B2%E5%90%88%E7%BA%A6/index.html" title="带你走进神秘的工厂合约|工厂合约解密|使用合约部署合约">带你走进神秘的工厂合约|工厂合约解密|使用合约部署合约</a><time datetime="2022-04-05T07:53:00.000Z" title="发表于 2022-04-05 15:53:00">2022-04-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/%E5%B0%86UniswapV2%E9%83%A8%E7%BD%B2%E5%88%B0%E6%89%80%E6%9C%89%E5%8C%BA%E5%9D%97%E9%93%BE-%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E4%BA%A4%E6%98%93%E6%89%80Uniswap%E5%A4%9A%E9%93%BE%E9%83%A8%E7%BD%B2/index.html" title="将UniswapV2部署到所有区块链--去中心化交易所Uniswap多链部署">将UniswapV2部署到所有区块链--去中心化交易所Uniswap多链部署</a><time datetime="2022-03-26T14:52:50.000Z" title="发表于 2022-03-26 22:52:50">2022-03-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%9A%84-Gas-%E4%BC%98%E5%8C%96%E5%9F%BA%E7%A1%80/index.html" title="一些简单的 Gas 优化基础">一些简单的 Gas 优化基础</a><time datetime="2022-03-24T13:28:30.000Z" title="发表于 2022-03-24 21:28:30">2022-03-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/%E6%B5%85%E8%B0%88NFT%E7%9A%84%E5%85%83%E6%95%B0%E6%8D%AE%E6%A0%87%E5%87%86/index.html" title="浅谈NFT的元数据标准">浅谈NFT的元数据标准</a><time datetime="2022-03-19T14:38:20.000Z" title="发表于 2022-03-19 22:38:20">2022-03-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Sdzczh</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 5.4.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+    if page.comments !== false && theme.comments.use
+      - var commentsJsLoad = true
+      !=partial('includes/third-party/comments/index', {}, {cache: true})
