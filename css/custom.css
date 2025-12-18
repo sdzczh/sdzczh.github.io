@@ -1,0 +1,15 @@
+html[data-theme='dark'] {
+  --hl-bg: #242424;
+  --hlumber-bg: #242424;
+}
+
+[dark-theme = 'dark'] {
+  --global-bg: oklch(0.141 0.005 285.823);
+  --font-color: oklch(1 0 0);
+  --card-bg: oklch(0.21 0.006 285.885);
+  --blockquote-color: oklch(1 0 0);
+}
+
+.layout{
+    max-width: 1200px;
+}
